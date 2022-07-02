@@ -1,32 +1,36 @@
 #include<stdio.h>
-int stringlength(char *str)
-{
-    int i;
-    for(i=0;str[i]!=NULL;i++);
-    return i;
-}
-void stringreverse(char *str)
-{
-    char temp;
-    int i,j,len;
-    len=stringlength(str);
-    i=0;j=len-1;
-    while(i<j)
-    {
-        temp=str[i];
-        str[i]=str[j];
-        str[j]=temp;
-        i++;
-        j--;
-    }
-}
+#include<string.h>
 int main()
 {
-    char str[100];
-    int len;
+    char str[1000];
     scanf("%[^
 ]s",str);
-    len=stringlength(str);
-    stringreverse(str);
-    printf("%s",str);
+    int i,j,l=strlen(str);
+    int i1=l-1,i2=l-1;
+    for (i=l-1; i>=0; i--)
+    {
+        if (str[i]==32 || i==0)
+        {
+            if (i==0)
+            {
+                for (j=i; j<=i2; j++)
+                {
+                    printf("%c",str[j]);
+                }
+            }
+            else
+            {
+                for (j=i+1; j<=i2; j++)
+                {
+                    printf("%c",str[j]);
+                }
+            }
+            i2=i-1;
+            if (i>0)
+            {
+                printf(" ");
+            }
+        }
+    }
+    return 0;
 }
