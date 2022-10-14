@@ -1,35 +1,27 @@
 #include<stdio.h>
-int isitprime(int n)
-{
-	int i,fc=0;
-	for(i=1;i<=n;i++)
-	{
-		if(n%i==0)
-		{
-			fc++;
-		}
-	}
-	if(fc==2)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
-}
 int main()
 {
-	int s,e,i;
-	scanf("%d",&s);
-	scanf("%d",&e);
-	for(i=s;i<=e;i++)
-	{
-		if(isitprime(i)==1)
-		{
-			printf("%d
-",i);
-		}
-	}
-	return 0;
+    int a,b;
+    scanf("%d%d",&a,&b);
+    int c=0,i;
+    if (a,b>=1 && a,b<=10000)
+    {
+        for (a;a<=b;a++)
+        {
+            c=0;
+            for (i=2; i<=a; i++)
+            {
+                if (a%i==0)
+                {
+                    c++;
+                }
+            }
+            if (c==1)
+            {
+                printf("%d
+",a);
+            }
+        }
+    }
+    return 0;
 }
