@@ -1,53 +1,35 @@
 #include<stdio.h>
-int isitpal(int num)
-{
-    int d,res=0,temp;
-    temp=num;
-    while(num)
-    {
-        d=num%10;
-        res=res*10+d;
-        num=num/10;
-    }
-    if(temp==res )
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-}
-int isprime(int num)
-{
-    int i,fc=0;
-    for(i=1;i<=num;i++)
-	{
-		if(num%i==0)
-		{
-			fc++;	
-		}	
-	}
-	if(fc==2)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
-}
-
 int main()
 {
-    int n,np;
-    scanf("%d",&n);
-    for(np=n+1;;np++)
+    int m,n,i,rem,res,q,s;
+    scanf("%d",&m);
+    for(n=m+1;n<=100000;n++)
     {
-        if(isitpal(np)&&isprime(np))
+        s=1;
+        for(i=2;i<=n/2;i++)
         {
-            break;
+            if(n%i==0)
+            {
+                s=0;
+                break;
+            }
+        }
+        if(s==1)
+        {
+            res=0;
+            q=n;
+            while(q>0)
+            {
+                rem=q%10;
+                res=(res*10)+rem;
+                q=q/10;
+            
+            }
+            if(res==n)
+            {
+                printf("%d",n);
+                break;
+            }
         }
     }
-    printf("%d",np);
 }
