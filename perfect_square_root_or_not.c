@@ -1,16 +1,23 @@
-
 #include<stdio.h>
-#include<math.h>
 int main()
 {
-    int num,i;
-    float f;
-    scanf("%d",&num);
-    f=sqrt((double)num);
-    i=f;
-    if(i==f)
-    printf("True");
+    int a,i,n=0;
+    scanf("%d",&a);
+    for (i=1; i<=a; i++)
+    {
+        if (i*i==a)
+        {
+            n=1;
+            break;
+        }
+    }
+    if (n==1)
+    {
+        printf("True");
+    }
     else
-    printf("False");
+    {
+        printf("False");
+    }
     return 0;
 }
