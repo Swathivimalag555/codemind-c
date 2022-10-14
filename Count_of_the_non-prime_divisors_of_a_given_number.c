@@ -1,40 +1,34 @@
 #include<stdio.h>
-int is_prime(int n)
-{
-    int i,c=0;
-    for(i=2;i<=n/2;i++)
-    {
-        if (n%i==0)
-        {
-            c++;
-        }
-    }
-    if(c==0)
-    {
-        return 1;
-    }
-    return 0;
-    
-}
 int main()
 {
-    int n,cou=2,i;
-    scanf("%d",&n);
-    for(i=1;i<=n/2;i++)
+    int a;
+    scanf("%d",&a);
+    int i,j,count=0,c=0;
+    if (a>=1 && a<=10000)
     {
-        if(n%i==0)
+        for (i=1; i<=a; i++)
         {
-            if(is_prime(i))
+            c=0;
+            if (a%i==0)
             {
-                i++;
-                continue;
-            }
-            else
-            {
-                cou++;
+                for (j=1; j<=i; j++)
+                {
+                    if (i%j==0)
+                    {
+                        c+=1;
+                    }
+                }
+                if (c==2)
+                {
+                    continue;
+                }
+                else
+                {
+                    count+=1;
+                }
             }
         }
     }
-    printf("%d",cou);
+    printf("%d",count);
     return 0;
 }
